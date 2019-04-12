@@ -65,5 +65,3 @@ test:
 production:
   <<: *default
   database: tiny_url_production
-  username: tiny_url
-  password: <%= ENV['MY_APP_NAME_DATABASE_PASSWORD'] %>
