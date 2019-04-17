@@ -10,7 +10,9 @@ class UrlsController < ApplicationController
   def create
     respond_to do |format|
       format.json {
-        Url.create(url_params)
+        url = Url.create(url_params)
+
+        render json: { url: new_url }.to_json
       }
     end
   end
@@ -18,10 +20,18 @@ class UrlsController < ApplicationController
   private
 
   def url_params
-    params.require(:url).permit(:original_url).merge(slug)
+    params.require(:url).permit(:original_url).merge(slug_param)
+  end
+
+  def slug_param
+    { slug: slug }
   end
 
   def slug
-    { slug: Digest::SHA256.hexdigest(params[:original_url])[0..6] }
+    Digest::SHA256.hexdigest(params[:original_url])[0..6]
+  end
+
+  def new_url
+    "#{request.host_with_port}/#{slug}"
   end
 end
