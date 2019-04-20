@@ -65,3 +65,7 @@ test:
 production:
   <<: *default
   database: tiny_url_production
+  username: tiny_url
+  password: mypassword
+  host: aws-tutorial-rds.c7clynhxp9ih.us-east-2.rds.amazonaws.com
+  port: 5432
