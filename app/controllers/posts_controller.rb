@@ -18,6 +18,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.slice(:body, :title)
+    params.require(:post).permit(:title, :body)
   end
 end
