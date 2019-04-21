@@ -1,6 +1,4 @@
-original_url = 'https://google.com'
-
-Url.create(
-  original_url: 'https://google.com', 
-  slug:  Digest::SHA256.hexdigest(original_url)[0...6]
+Post.create(
+  title: 'Lorem ipsum dolor sit amet', 
+  body:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at congue orci. Curabitur dictum auctor libero vitae interdum. Nam facilisis pellentesque dui eget rutrum. Morbi sodales ligula vel venenatis suscipit. Donec et cursus nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem augue, porta id tortor ac, venenatis dignissim mi. Vestibulum at ultrices neque, nec pretium orci. Suspendisse potenti. Duis fermentum nec nisl nec auctor. Proin porttitor pulvinar lorem, non suscipit odio fringilla sed. Duis ac magna eu lectus auctor dapibus et eget augue. Quisque eleifend suscipit quam sed dictum. Nunc aliquet at quam a pulvinar.'
 )
